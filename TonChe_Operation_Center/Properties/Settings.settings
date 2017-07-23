@@ -1,0 +1,24 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TonChe_Operation_Cneter.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WebVersion" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Y</Value>
+    </Setting>
+    <Setting Name="WebPicture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://114.33.130.81/TC_DATA/Picture/</Value>
+    </Setting>
+    <Setting Name="WebDesignForm" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G:\Tonche\織物分析圖_SYS\</Value>
+    </Setting>
+    <Setting Name="SaveFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\TonChe\</Value>
+    </Setting>
+    <Setting Name="LocalPicture" Type="System.String" Scope="User">
+      <Value Profile="(Default)">D:\Tonche_System_data\Picture\</Value>
+    </Setting>
+    <Setting Name="LocalDesignForm" Type="System.String" Scope="User">
+      <Value Profile="(Default)">G:\Tonche\織物分析圖_SYS\</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
