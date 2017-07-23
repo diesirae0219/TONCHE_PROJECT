@@ -146,8 +146,7 @@
       <HintPath>..\..\..\..\..\..\..\Program Files (x86)\DevExpress 16.1\Components\Bin\Framework\DevExpress.XtraPrinting.v16.1.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="FactoryObject, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="FactoryObject">
       <HintPath>..\FactoryObject\FactoryObject\bin\Debug\FactoryObject.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />

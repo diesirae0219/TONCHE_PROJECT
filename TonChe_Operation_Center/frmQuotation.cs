@@ -19,7 +19,7 @@ using TonChe_Operation_Cneter.Utility;
 namespace TonChe_Operation_Cneter
 {
     public partial class frmQuotation : Form
-    {
+    { 
         private PrintDocument printDocument1 = new PrintDocument();
         private int rowCounter = 0;
         private int CurPages = 0;
