@@ -15,7 +15,7 @@
       <Value Profile="(Default)">C:\TonChe\</Value>
     </Setting>
     <Setting Name="LocalPicture" Type="System.String" Scope="User">
-      <Value Profile="(Default)">D:\Tonche_System_data\Picture\</Value>
+      <Value Profile="(Default)">G:\Tonche_System_data\Picture\</Value>
     </Setting>
     <Setting Name="LocalDesignForm" Type="System.String" Scope="User">
       <Value Profile="(Default)">G:\Tonche\織物分析圖_SYS\</Value>

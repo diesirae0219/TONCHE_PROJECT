@@ -230,15 +230,18 @@ namespace TonChe_Operation_Cneter
             gvOrder.ColumnCount = 4;
             gvOrder.Columns[0].Name = "colNO";
             gvOrder.Columns[0].HeaderText = "No.";
+            gvOrder.Columns[0].ReadOnly = true;
             gvOrder.Columns[0].Width = 100;
     
 
             gvOrder.Columns[1].Name = "colText";
             gvOrder.Columns[1].HeaderText = "Art_Id";
             gvOrder.Columns[1].Width = 250;
+            gvOrder.Columns[1].ReadOnly = true;
 
             gvOrder.Columns[2].Name = "colComp";
             gvOrder.Columns[2].HeaderText = "Composition";
+            gvOrder.Columns[2].ReadOnly = true;
             gvOrder.Columns[2].Width = 250;
 
             gvOrder.Columns[3].Name = "colNote";
@@ -1371,7 +1374,17 @@ namespace TonChe_Operation_Cneter
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SaveSelectionl();
+            try
+            {
+                SaveSelectionl();
+                MessageBox.Show("儲存成功!!");
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("儲存失敗!!");
+            }
+            
         }
 
         //public static int GetPageCount(PrintDocument printDocument)
