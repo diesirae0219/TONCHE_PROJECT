@@ -21,7 +21,7 @@ namespace TonChe_Operation_Cneter
         public frmLogin()
         {
             InitializeComponent();
-            this.rgMode.SelectedIndex = 1;
+            this.rgMode.SelectedIndex = 0;
             SetSysMode(); 
             Init();
         }
