@@ -153,19 +153,68 @@ namespace TonChe_Operation_Cneter.Database
             and t1.grp = t2.grp";
 
 
-        public static string Q_EQPSummary =@"
-SELECT [DATE]      ,[SHIFT]      ,[EQP_ID]      ,[PROD_ID]      ,[RPM]      ,[WD]      ,[ACT_QTY]      ,[QTY]
-,[G3]      ,[G4]      ,[G5]      ,[I1]      ,[I2]      ,[REMARK]      ,[SUM_ACT_QTY]      ,[SUM_QTY]
-FROM [TonChe].[dbo].[tbEQP_QTY] t
-where t.date between '2017-03-01' and '2017-03-31'
-order by date";
-
         public static string Q_EQPSummary_By_Date = @"
         SELECT 
         DATE ,ROUND(AVG(ACT_QTY/((RPM*40/WD)/3)*100),2)EFF,SUM(ACT_QTY) SUM_QTY,round(sum(SUM_ACT_QTY*I1*I2)/3,0) EARNED
         FROM tbEQP_QTY t
-        where t.date between '2017-03-01' and '2017-03-31'
+        where t.date between ':dt1' and ':dt2'
+        --#prod_id#
+        --#eqp_id#
         group by date";
+
+        public static string Q_EQP_AVG_By_Date = @"
+         SELECT 
+        round(sum(SUM_ACT_QTY*I1*I2)/3,0) EARNED,ROUND(AVG(ACT_QTY/((RPM*40/WD)/3)*100),2)EFF,SUM(ACT_QTY) SUM_QTY,AVG(CONVERT(INT, RPM))RPM
+        FROM tbEQP_QTY t
+        where t.date between ':dt1' and ':dt2'
+        --#prod_id#
+        --#eqp_id#
+        ";
+
+
+        public static string Q_PROD_ID_By_Date = @"
+        SELECT 
+        Distinct PROD_ID
+        FROM tbEQP_QTY t
+        where t.date between ':dt1' and ':dt2'
+        order by PROD_ID ";
+
+        public static string Q_EQP_ID_By_Date = @"
+        SELECT 
+        Distinct EQP_ID
+        FROM tbEQP_QTY t
+        where t.date between ':dt1' and ':dt2'
+        order by EQP_ID ";
+       
+
+        public static string Q_EQPSummary_By_1Date = @"
+        SELECT 
+        t.EQP_ID,PROD_ID,RPM,WD,SHIFT,      
+        ACT_QTY ,ROUND((ACT_QTY/(RPM*40/WD/3))*100,0) EFF,QTY,SUM_ACT_QTY,SUM_ACT_QTY*I1*I2,REMARK
+        FROM tbEQP_QTY t
+        where t.date = ':dt1'  
+         --#prod_id#
+        --#eqp_id#
+        order by date,eqp_id,shift
+        ";
+
+        public static string Q_EQPSummary_By_1Date_ByShift = @"        
+        SELECT 
+        SHIFT,ROUND(AVG((ACT_QTY/(RPM*40/WD/3))*100),0) EFF,SUM(QTY)QTY
+        FROM tbEQP_QTY t
+        where date = ':dt1' 
+        --#prod_id# 
+        --#eqp_id#
+        group by SHIFT ";
+
+        public static string Q_EQPSummary_By_1Date_ByAll = @"        
+        SELECT 
+        ROUND(AVG((ACT_QTY/(RPM*40/WD/3))*100),0) EFF,SUM(QTY)QTY,avg(CONVERT(INT, RPM))RPM,round(sum(SUM_ACT_QTY*I1*I2),0)EARN
+        FROM tbEQP_QTY t
+        where date =  ':dt1'   
+        --#prod_id#
+        --#eqp_id#
+        ";
 
 
         public static string Q_STOCK_HISTORY = @"
